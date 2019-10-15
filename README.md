@@ -17,3 +17,16 @@ This is the stylesheet. It is compiled to .css and piped to the pub folder throu
 
 ## Gulp related files
 The gulpfile.js handles tasks to compress and move Html, Javascript and Css-converted Sass to the /pub folder. There is also a .gitignore file specifying what files to avoid pushing to Github.
+
+### Gulp tasks
+1. movehtml
+  1. minify
+  2. move to /pub.
+2. compilesass
+  1.  compress to css
+  2. move to /pub
+3. movejs
+  1. concatenate with other JS-files.
+  2. transpile through babel
+  3. uglify
+  4. moe to /pub
