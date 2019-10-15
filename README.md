@@ -20,13 +20,13 @@ The gulpfile.js handles tasks to compress and move Html, Javascript and Css-conv
 
 ### Gulp tasks
 1. movehtml
-  1. minify
-  2. move to /pub.
+    1. minify
+    2. move to /pub.
 2. compilesass
-  1.  compress to css
-  2. move to /pub
+    1.  compress to css
+    2. move to /pub
 3. movejs
-  1. concatenate with other JS-files.
-  2. transpile through babel
-  3. uglify
-  4. moe to /pub
+    1. concatenate with other JS-files.
+    2. transpile through babel
+    3. uglify
+    4. moe to /pub
