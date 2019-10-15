@@ -1,5 +1,5 @@
 # Fetch - a REST consumer
-This repo contains a gulp automated environment for a REST consumer service, meant to be used for making requests to http://williamwara.nu/rest/fetch.html. It consists of the following files:
+This repo contains a gulp automated environment for a REST consumer service, meant to be used for making requests to http://williamwara.nu/rest/read.php. The files generated through this environment are uploaded to http://williamwara.nu/rest/fetch.html. This repo consists of the following files:
 
 1. fetch.html
 2. main.js
