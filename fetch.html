@@ -5,20 +5,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="style/style.css">
-        <title>Document</title>
+        <title>Fetcher - A REST consumer</title>
     </head>
     <body>
 
         <div id="outputbox">
-
+            
         </div>
 
         <div id="addBox">
-            <input type="text" name="code" id="code" placeholder="kurskod">
-            <input type="text" name="name" id="name" placeholder="kursnamn">
+            <h4>Add course</h4>
+            <input type="text" name="code" id="code" placeholder="course code">
+            <input type="text" name="name" id="name" placeholder="course name">
             <input type="text" name="progression" id="progression" placeholder="progression">
-            <input type="text" name="syllabus" id="syllabus" placeholder="webblänk">
-            <button onclick="fetcherPost()" type="button" input="submit">Skicka</button>
+            <input type="text" name="syllabus" id="syllabus" placeholder="link">
+            <button onclick="fetcherPost()" type="button" input="submit">Submit</button>
         </div>
 
         <script src="js/main.js"></script>

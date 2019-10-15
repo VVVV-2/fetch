@@ -4,13 +4,13 @@ function fetcherGet() {
     fetch('http://williamwara.nu/rest/read.php') // Call the fetch function passing the url of the API as a parameter
     .then((res) => res.json())  //present result as JSON
     .then((data) => {
-        let output = '<h2>Kurser</h2>'  //create html-block
+        let output = '<h2>Courses</h2>'  //create html-block
         data.forEach((post) => {    //loop through object and paste properties in html
             output +=
             `<div class="coursebox">
                 <h3>${post.code}</h3>
                 <p>${post.name}</p>
-                <p>${post.progression}</p>
+                <p>Progression: ${post.progression}</p>
                 <a href="${post.syllabus}">${post.syllabus}</a>
                 
             </div>`   

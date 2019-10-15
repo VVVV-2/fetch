@@ -1,0 +1,55 @@
+
+
+/*$backcolor: rgb(128, 255, 0);*/
+
+$hfont: Arial, Helvetica, sans-serif;
+$bfont: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+$tcolor: rgb(54, 54, 82);
+$acolor: rgb(9, 77, 100);
+
+$backcolor: rgb(226, 209, 217);
+$boxcolor: rgb(255, 235, 235);
+
+
+body{
+    background-color: $backcolor;
+    
+    h2{
+        font-family: $hfont;
+        margin: 10px;
+        color: $tcolor;
+    }
+
+}
+
+.coursebox{
+
+    background-color: $boxcolor;
+    border-radius: 5px;
+    margin:10px;
+    padding: 10px;
+    font-family: $bfont;
+    color: $tcolor;
+    
+    h3{
+        font-family: $hfont;
+    }
+
+    a{
+        color: $acolor;
+    }
+}
+
+#addBox{
+    margin:10px;
+    input, button{
+        padding: 5px;
+        border-radius: 4px;
+        margin-bottom: 20px;
+    }
+    h4{
+        color: $tcolor;
+        font-family: $hfont;
+    }
+
+}
