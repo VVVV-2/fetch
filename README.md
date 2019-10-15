@@ -29,4 +29,4 @@ The gulpfile.js handles tasks to compress and move Html, Javascript and Css-conv
     1. concatenate with other JS-files.
     2. transpile through babel
     3. uglify
-    4. moe to /pub
+    4. move to /pub
