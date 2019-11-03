@@ -7,10 +7,10 @@ This repo contains a gulp automated environment for a REST consumer service, mea
 4. Gulp related files (gulpfile.js, package.json...)
 
 ## fetch.html
-This is the output interface. It displays GET information as Html via the main.js file. It is possible to make POST requests and send data through the input fields. 
+This is the output interface. It displays GET information as Html via the main.js file. It is possible to make POST, DELETE and PUT requests and send data through the input fields. 
 
 ## main.js
-Javascript for GET and POST using fetch() to get API. See code comments for more info.
+Javascript for GET, POST, DELETE and POST using fetch() to get API. See code comments for more info.
 
 ## style.scss
 This is the stylesheet. It is compiled to .css and piped to the pub folder through gulpfile.js.
