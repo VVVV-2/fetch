@@ -8,10 +8,12 @@ function fetcherGet() {
         data.forEach((post) => {    //loop through object and paste properties in html
             output +=
             `<div class="coursebox">
-                <h3>${post.code}</h3>
-                <p>${post.name}</p>
-                <p>Progression: ${post.progression}</p>
-                <a href="${post.syllabus}">${post.syllabus}</a>
+                <h3 id="${post.id}code">${post.code}</h3>
+                <p id="${post.id}name">${post.name}</p>
+                <p>Progression: <span id="${post.id}progression">${post.progression}</span></p>
+                <a id="${post.id}syllabus" href="${post.syllabus}">${post.syllabus}</a><br>
+                <button onclick="editThis(${post.id})" class="btn" type="button">Ändra</button>
+                <button id="${post.id}" onclick="fetcherDelete(this)" class="btn" type="button">Ta bort</button>
                 
             </div>`   
         });
@@ -52,6 +54,8 @@ function fetcherPost(){
     //send request
     fetch('http://williamwara.nu/rest/read.php', fetchData);
 
+    } else {
+        alert('No field can be empty!');
     }
     //update list  
     fetcherGet();
@@ -81,6 +85,84 @@ function editBox(courseId) {
     })
 
 }*/
+
+function editThis(id){
+
+    window.scrollTo(0,document.body.scrollHeight); //scroll to bottom of page
+
+    let _id = id + "";  //find the right IDs to get values from
+    let _code = _id.concat('code');
+    let _name = _id.concat('name');
+    let _progression = _id.concat('progression');
+    let _syllabus = _id.concat('syllabus');
+
+    document.getElementById('code').value = document.getElementById(_code).innerHTML;   //values to get
+    document.getElementById('name').value = document.getElementById(_name).innerHTML;
+    document.getElementById('progression').value = document.getElementById(_progression).innerHTML;
+    document.getElementById('syllabus').value = document.getElementById(_syllabus).text;
+
+    let movableClass = document.getElementById('putid');    //change button class appropriate ID number
+    movableClass.className = id;
+    
+
+}
+
+function fetcherPut(){  
+
+    let id = document.getElementById('putid').className;
+    let code = document.getElementById('code').value;   //variables assigned values from fetch.html
+    let name = document.getElementById('name').value;
+    let progression = document.getElementById('progression').value;
+    let syllabus = document.getElementById('syllabus').value;
+
+    //check for variable length
+    if((code.length >0) && (name.length >0) && (progression.length) >0 && (syllabus.length >0)){
+
+    //POST data to JSON format
+    let data = JSON.stringify(  //json
+        {
+        "id": id,
+        "code": code,
+        "name": name,
+        "progression": progression,
+        "syllabus": syllabus
+        }
+    )
+    //select method and pasta POST data
+    let fetchData = { 
+        method: 'PUT', 
+        body: data
+    }
+    //send request
+    fetch('http://williamwara.nu/rest/read.php', fetchData);
+
+    } else {
+        alert('No field can be empty!');
+    }
+    //update list  
+    fetcherGet();
+}
+
+function fetcherDelete(element){
+
+let id = element.id;
+
+let data = JSON.stringify(  //json
+    {
+    "id": id
+    }
+)
+//select method and pasta POST data
+let fetchData = { 
+    method: 'DELETE', 
+    body: data
+}
+//send request
+fetch('http://williamwara.nu/rest/read.php', fetchData);
+
+fetcherGet();
+
+}
 
 fetcherGet();
 
